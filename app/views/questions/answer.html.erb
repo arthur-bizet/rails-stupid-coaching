@@ -1,0 +1,20 @@
+<h1>Answer</h1>
+
+<% if params[:question] == "I am going to work" %>
+    <div>
+      <p><%= params[:question] %></p>
+      <p><%= @answer[0] %></p>
+    </div>
+    <% elsif params[:question].include?("?") %>
+    <div>
+      <p><%= params[:question] %></p>
+      <p><%= @answer[1] %></p>
+    </div>
+    <% else %>
+    <div>
+      <p><%= params[:question] %></p>
+      <p><%= @answer[2] %></p>
+    </div>
+<% end %>
+
+<%= link_to "Ask new question", ask_path %>
